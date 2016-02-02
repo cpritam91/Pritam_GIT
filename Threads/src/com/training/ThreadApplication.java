@@ -4,7 +4,11 @@ public class ThreadApplication {
 
 	public static void main(String[] args) {
 
-		Thread obj = new MyThread();
+		System.out.println(Thread.currentThread().getName());
+		
+		MyThread obj = new MyThread();
+		
+		obj.setName("Printing Thread");
 		
 		obj.start();
 
