@@ -32,8 +32,15 @@ public class NursingHome {
 	public void printDoctorList() {
 		
 		for(Doctor doc : doclist) {
-			
 			System.out.println(doc);
+			if(doc.getPatients()!=null)
+			{
+				System.out.println("Appointments :");
+				for(Patient pat:(doc.getPatients()))
+					System.out.println(pat);
+			}
+			else
+				System.out.println("No Appointments");
 		}
 	}
 	

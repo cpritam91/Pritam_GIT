@@ -1,11 +1,14 @@
 package com.training.domains;
 
+import java.util.TreeSet;
+
 public class Doctor implements Comparable<Doctor> {
 
 	private long doctorId;
 	private String doctorName;
 	private String specialization;
 	
+	private TreeSet<Patient> patients;
 	
 	public Doctor() {
 		super();
@@ -47,6 +50,17 @@ public class Doctor implements Comparable<Doctor> {
 
 	public void setSpecialization(String specialization) {
 		this.specialization = specialization;
+	}
+
+	
+
+	public TreeSet<Patient> getPatients() {
+		return patients;
+	}
+
+
+	public void setPatients(TreeSet<Patient> patients) {
+		this.patients = patients;
 	}
 
 
