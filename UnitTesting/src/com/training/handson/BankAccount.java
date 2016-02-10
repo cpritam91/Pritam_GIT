@@ -2,17 +2,17 @@ package com.training.handson;
 
 public class BankAccount {
 
-	private int accNo;
+	private Integer accNo;
 	private String accHolderName;
-	private double balance;
+	private Double balance;
 	
 	public BankAccount() {
 					
 	}
 
-	public BankAccount(int accNo, String accHolderName, double balance){
+	public BankAccount(Integer accNo, String accHolderName, Double balance){
 		super();
-		if(accHolderName != null) {
+		if(accHolderName != null && accNo != null && balance != null) {
 			this.accNo = accNo;
 			this.accHolderName = accHolderName;
 			this.balance = balance;
@@ -50,7 +50,9 @@ public class BankAccount {
 		return balance;
 	}
 	public double withdraw(double amountWithdrawn) {
-		balance += amountWithdrawn;
+		if(balance >= amountWithdrawn)
+			balance -= amountWithdrawn;
+		//while(true) {}
 		return balance;
 	}
 }

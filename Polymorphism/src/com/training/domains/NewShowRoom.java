@@ -9,7 +9,9 @@ public class NewShowRoom extends ShowRoom {
 		if (key>=1 && key <=3)
 			return super.getItem(key);
 			
-		else
+		if (key == 4)
 			return new SportsBike();
+		
+		return null;
 	}
 }
