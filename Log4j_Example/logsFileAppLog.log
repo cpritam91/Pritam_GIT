@@ -1,0 +1,28 @@
+0    [main] INFO  root  - Starting Application
+1    [main] INFO  root  - Food Item Initialized
+1    [main] INFO  root  - Food Item Initialized
+1    [main] INFO  root  - Food Item Initialized
+1    [main] INFO  root  - Food Item Initialized
+1    [main] INFO  root  - Food Item Initialized
+2    [main] INFO  root  - Item List Initialized
+2    [main] INFO  root  - Food Item Added
+2    [main] INFO  root  - Food Item Added
+2    [main] INFO  root  - Food Item Added
+2    [main] INFO  root  - Food Item Added
+2    [main] INFO  root  - Food Item Added
+3778 [main] INFO  root  - Main Completed
+1    [main] INFO  root  - Starting Application
+1    [main] INFO  root  - Starting Application
+0    [main] INFO  root  - Starting Application
+3    [main] INFO  com.training.domain.FoodItem  - Food Item Initialized
+3    [main] INFO  com.training.domain.FoodItem  - Food Item Initialized
+3    [main] INFO  com.training.domain.FoodItem  - Food Item Initialized
+3    [main] INFO  com.training.domain.FoodItem  - Food Item Initialized
+3    [main] INFO  com.training.domain.FoodItem  - Food Item Initialized
+3    [main] INFO  root  - Item List Initialized
+4    [main] INFO  root  - Food Item Added
+4    [main] INFO  root  - Food Item Added
+4    [main] INFO  root  - Food Item Added
+4    [main] INFO  root  - Food Item Added
+4    [main] INFO  root  - Food Item Added
+3598 [main] INFO  root  - Main Completed
