@@ -1,6 +1,7 @@
 package com.training.daos;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.training.entity.*;
@@ -43,14 +44,70 @@ public class UserDAO implements DAO<User> {
 
 	@Override
 	public User find(int key) {
-		// TODO Auto-generated method stub
-		return null;
+		User us = null;
+		String sql = "SELECT * FROM EmployeeLoginDetails WHERE EmpId = ?";
+		
+		try {
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				
+				pstmt.setInt(1, key);
+				
+				ResultSet rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					us = getUser(rs);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return us;
 	}
 
+	private User getUser(ResultSet rs) {
+		
+		User us = null;
+		
+		try {
+			int usId = rs.getInt("EmpId");
+			String role = rs.getString("Role");
+			String pass = rs.getString("Password");
+			
+			us = new User(usId, pass, role);
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return us;
+	}
+	
 	@Override
 	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM EmployeeLoginDetails";
+		
+		ArrayList<User> list = new ArrayList<User>();
+		try {
+			
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				User us = getUser(rs);
+				list.add(us);
+			}
+			
+			
+		}catch(SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 
 	public int update(User u) {
