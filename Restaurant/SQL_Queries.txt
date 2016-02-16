@@ -8,6 +8,9 @@ CREATE TABLE  "EMPLOYEE"
    )
 
 
+-------------------------------------------------------------------------
+
+
 CREATE TABLE  "EMPLOYEELOGINDETAILS" 
    (	"EMPID" NUMBER(5,0), 
 	"PASSWORD" VARCHAR2(20) NOT NULL ENABLE, 
@@ -17,6 +20,7 @@ CREATE TABLE  "EMPLOYEELOGINDETAILS"
 	  REFERENCES  "EMPLOYEE" ("EMPID") ON DELETE CASCADE ENABLE
    )
 
+-------------------------------------------------------------------------
 
 CREATE table "ITEM" (
     "ITEMID"     NUMBER,
@@ -27,4 +31,54 @@ CREATE table "ITEM" (
     "VEG_NONVEG" VARCHAR2(10),
     constraint  "ITEM_PK" primary key ("ITEMID")
 )
+
+
+-------------------------------------------------------------------------
+
+ 
+CREATE TABLE  "WAITERTABLE" 
+   (	"TABLENO" NUMBER(4,0), 
+	"WAITERID" NUMBER(5,0) NOT NULL ENABLE, 
+	 CONSTRAINT "WAITERTABLE_PK" PRIMARY KEY ("TABLENO") ENABLE, 
+	 CONSTRAINT "WAITERTABLE_FK" FOREIGN KEY ("WAITERID")
+	  REFERENCES  "EMPLOYEE" ("EMPID") ENABLE
+   )
+
+
+-------------------------------------------------------------------------
+CREATE table "BILL" (
+    "BILLNO"     NUMBER(8),
+    "TABLENO"    NUMBER(4),
+    "CUSNAME"    VARCHAR2(30),
+    "NOOFDINERS" NUMBER(3),
+    "TIME"       TIMESTAMP,
+    "AMOUNT"     NUMBER(9,2),
+    constraint  "BILL_PK" primary key ("BILLNO")
+)
+/
+
+ALTER TABLE "BILL" ADD CONSTRAINT "BILL_FK2" 
+FOREIGN KEY ("TABLENO")
+REFERENCES "WAITERTABLE" ("TABLENO")
+ON DELETE CASCADE
+
+/
+
+-----------------------------------------------------------------------------------
+
+CREATE TABLE  "ORDERS" 
+   (	"ORDERID" NUMBER(8,0), 
+	"BILLNO" NUMBER(8,0) NOT NULL ENABLE, 
+	"ITEMID" NUMBER NOT NULL ENABLE, 
+	"QUANTITY" NUMBER(3,0) NOT NULL ENABLE, 
+	"READY" VARCHAR2(10), 
+	 CONSTRAINT "ORDERS_PK" PRIMARY KEY ("ORDERID") ENABLE, 
+	 CONSTRAINT "ORDERS_FK2" FOREIGN KEY ("ITEMID")
+	  REFERENCES  "ITEM" ("ITEMID") ON DELETE CASCADE ENABLE, 
+	 CONSTRAINT "ORDERS_FK3" FOREIGN KEY ("BILLNO")
+	  REFERENCES  "BILL" ("BILLNO") ON DELETE CASCADE ENABLE
+   )
+/
+
+-------------------------------------------------------------------------------
 

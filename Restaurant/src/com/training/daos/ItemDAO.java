@@ -165,5 +165,23 @@ public class ItemDAO implements DAO<Item> {
 		return rowDeleted;
 	}
 
-	
+	public Item returnPrice(int key) {
+		String sql = "SELECT * FROM Item WHERE ItemId = ?";
+		Item it =null;
+		ResultSet rs;
+		try {
+			
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, key);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				it = getItem(rs);
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return it;
+	}
 }

@@ -1,44 +1,42 @@
 package com.training.entity;
 
-import java.util.*;
+import java.util.ArrayList;
+
+import com.training.daos.*;
 
 public class Waiter extends Employee {
 
-	private Set<Integer> tables;
+	private Table table;
 
 	public Waiter(int empId, String empName, double salary, long mobNo, boolean isEnabled) {
 		super(empId, empName, salary, mobNo, isEnabled);
 	}
-	public Waiter(int empId, String empName, double salary, long mobNo, boolean isEnabled,Set<Integer> tables) {
+	public Waiter(int empId, String empName, double salary, long mobNo, boolean isEnabled,int tableNo) {
 		super(empId, empName, salary, mobNo, isEnabled);
-		this.tables = tables;
+		this.table = new Table(tableNo,empId);
 	}
 	
-
-	public Set<Integer> getTables() {
-		return tables;
+	public Table getTable() {
+		return table;
 	}
-	public void setTables(Set<Integer> tables) {
-		this.tables = tables;
+	public void setTable(Table table) {
+		this.table = table;
 	}
 	
-	public boolean addTable(int tableNo) {
-		return tables.add(tableNo);
+	public void placeOrder(Order od) {
+		
+		OrderDAO obj = new OrderDAO();
+		obj.add(od);
 	}
-	public boolean removeTable(int tableNo) {
-		for(int tNo : tables) {
-			if (tNo == tableNo) {
-				tables.remove(tNo);
-				return true;
-			}		
-		}
-		return false;
-	}
-	public void viewTable() {
-		System.out.println("Tables served by Employee - "+super.getEmpId()+" : ");
-		for(int tno : tables) {
-			System.out.print(tno + " ");
-		}
-		System.out.println();
+	
+	public double generateBill(int BillNo) {
+		
+		OrderDAO odao = new OrderDAO();
+		ItemDAO idao = new ItemDAO();
+		ArrayList<Order> allOrders = odao.findOrder(BillNo);
+		double total = 0;
+		for(Order od : allOrders)
+			total += (idao.returnPrice(od.getItemId()).getPrice()*od.getQuantity());
+		return total;
 	}
 }
