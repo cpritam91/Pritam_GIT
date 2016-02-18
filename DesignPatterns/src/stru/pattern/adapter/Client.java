@@ -1,4 +1,4 @@
-package crea.strupattern.adapter;
+package stru.pattern.adapter;
 
 public class Client {
 
