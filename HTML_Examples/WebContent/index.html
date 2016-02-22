@@ -28,11 +28,11 @@
 		<table>
 			<tr>
 				<td><label>Username</label></td>
-				<td><input type = "text" name = "userName" placeholder="UserName" required="required" size="20"></td>
+				<td><input id="uname" type = "text" name = "userName" placeholder="UserName" required="required" size="20"></td>
 			</tr>
 			<tr>
 				<td><label>Password</label></td>
-				<td><input type = "password" name = "passWord" placeholder="Password" required="required" size="20"></td>
+				<td><input id="pass" type = "password" name = "passWord" placeholder="Password" required="required" size="20"></td>
 			</tr>
 			<tr>
 				<td><label>Phone Number</label></td>
@@ -57,5 +57,26 @@
 		</table>
 	</form>
 </section>
+
+<script type="text/javascript">
+
+	var element= document.getElementById("uname");
+	element.addEventListener("copy", function(event) {
+		event.preventDefault();// This will prevent the copying from taking place. Without this line the copy will be done but alert 
+		//would be shown. 
+		alert("Copy Not Allowed");
+	});
+	element.addEventListener("paste", function(event) { //Event need not be passed as it is an implicit object and JS is loosely typed
+		event.preventDefault();
+		alert("Paste Not Allowed");
+	});
+	
+	document.addEventListener("contextmenu", function(event) {
+		event.preventDefault();
+		alert("Right Click Not Allowed");		
+	});
+	
+</script>
+
 </body>
 </html>

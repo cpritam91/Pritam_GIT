@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Check String Strength</title>
+<script type="text/javascript">
+	function refresh() {
+		document.getElementById("txt").value = "";
+	}
+</script>
+</head>
+<body onload="refresh()">
+	<input type="text" id="txt" size = "20" name = "txtbox"> 
+	<span id="result"></span>
+	<script type="text/javascript">
+		var msg;
+		var res = document.getElementById("result");
+		var element = document.getElementById("txt");
+		element.addEventListener("input", function(){
+			var str = element.value;
+			
+			if(str.length < 3) {
+				msg="Weak";
+				res.style.color = "red";
+			}
+			else if(str.length >=3 && str.length < 7) {
+				msg="Good";
+				res.style.color = "yellow";
+			}
+			else {
+				msg="Strong";
+				res.style.color = "green";
+			}
+			res.innerHTML = msg;
+		});
+	</script>
+</body>
+</html>

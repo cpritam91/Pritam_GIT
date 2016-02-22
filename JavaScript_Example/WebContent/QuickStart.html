@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Java Script Example</title>
+<script type="text/javascript" src="Scripts/QuickStart.js"></script>
+<script type="text/javascript">
+
+	//alert("Hello from Head");
+	
+	function showMessage() { 
+		alert("Show Message");
+	}
+	//Head Section gets executed first. 
+	//i.e. a function called from the head which has its definition in the body will not be executed.
+	
+	
+</script>
+</head>
+
+
+<body>
+
+<input type="button" id="btn1" value="Click">
+<script type="text/javascript">
+	var element = document.getElementById("btn1");
+
+	/*element.addEventListener("click", function() { //Anonymous function
+	
+	alert('Hello From Event Handler');
+	});*/
+	
+	element.addEventListener("click", showMessage);
+	/* Whenever we have a named function inside an EventHandler it  shouldn't have the parenthesis. 
+	   element.addEventListener("click", showMessage()); --> This will call showMessage() ignoring the occurence of the event.*/
+	
+</script>
+<!--  <script type="text/javascript">
+
+	alert("Hello from Body Section");
+	showMessage();
+	greet();
+</script>-->
+</body>
+</html>
