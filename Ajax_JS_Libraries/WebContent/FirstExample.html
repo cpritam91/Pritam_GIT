@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Execution Order</title>
+<script type="text/javascript" src = "jslibs/jquery-1.12.1.js"></script>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		alert("On Load 1 Called");
+	}
+
+	$(function(){
+		alert("Ready 1 Called");
+	});
+	
+	$(function(){
+		alert("Ready 2 Called");
+	});
+	
+	window.onload = function(){
+		alert("On Load 2 Called");
+	}
+	window.onload = function(){
+		alert("On Load 3 Called");
+	}
+	window.onload = function(){//Only this onload will be called
+		alert("On Load 4 Called");
+	}
+	
+	/*
+	Onload is executed when the page is loaded and there can be only one onload event
+	handler. In case of multiple onloads, the last one in the sequence is loaded.
+	But ready is executed once the DOM is loaded. and there can be multiple.
+	The sequence of execution is the same as that in the script.
+	*/
+</script>
+</head>
+<body>
+	<h1>jQuery Examples</h1>
+	<h3 id = "detail">Ajax Calls</h3>
+	
+	<ul>
+		<li>UML</li>
+		<li>OOAD</li>
+		<li>RDMS</li>
+		<li>Java</li>
+		<li>ANT &amp; Log4j</li>
+		<li>Design Patterns</li>
+	</ul>
+</body>
+</html>

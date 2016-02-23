@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CSS jQuery</title>
+<script type="text/javascript" src = "jslibs/jquery-1.12.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("h1").css("color","blue");
+		$("#detail").css("font-size","2.2em");
+		$("ul>li").css("color","red");
+		$("img").on('click',function(){ //Analogous to addEventListener
+			alert("Can't play movies on it bro!! ;) ");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>jQuery Examples</h1>
+	<h3 id = "detail">Ajax Calls</h3>
+	
+	<ul>
+		<li>UML</li>
+		<li>OOAD</li>
+		<li>RDMS</li>
+		<li>Java</li>
+		<li>ANT &amp; Log4j</li>
+		<li>Design Patterns</li>
+	</ul>
+	<img src = "Images/tv.jpg" alt="TV">
+</body>
+</html>
