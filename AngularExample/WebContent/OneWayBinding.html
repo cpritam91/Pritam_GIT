@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>One Way Binding</title>
+<script type="text/javascript" src = "Scripts/angular.js"></script>
+
+<script type="text/javascript">
+	
+	var items= [{
+			"itemName":'Television',
+			"image":"Images/tv.jpg",
+			"price":34000.00
+		},
+		{
+			"itemName":'Fridge',
+			"image":"Images/fridge.jpg",
+			"price":25000.00
+		},
+		{
+			"itemName":'Washing Machine',
+			"image":"Images/wash.jpg",
+			"price":12000.00
+		}];
+	
+	var appli = angular.module("oneWay",[]);
+	
+	appli.controller('itemController',function($scope){
+		$scope.products = items;
+	});
+</script>
+</head>
+<body>
+<div data-ng-app = "oneWay" data-ng-controller = "itemController">
+<div style=" text-align: center;">
+	<label>Search</label>
+	<input type="search" data-ng-model="criteria" name="criteria"></div>
+	<table border="1">
+	<tr data-ng-repeat="product in products|filter:criteria | orderBy : ['itemName','price']"> 
+		<td data-ng-bind = "product.itemName"></td> 
+		<td><img alt = "Product" data-ng-src = "{{product.image}}" width="300px" height="200px"></img></td>
+		<td data-ng-bind = "product.price"></td> 
+	</tr> 
+	</table>
+	<!--
+	<h1 data-ng-bind = "product.itemName"></h1>
+	<img alt = "Product" data-ng-src = "{{product.image}}"></img><!-- ng-src requires an
+	expression  which needs to be evaluated wile bind accepts the item-->
+	<!-- <p data-ng-bind = "product.price"></p> -->
+</div>
+</body>
+</html>
