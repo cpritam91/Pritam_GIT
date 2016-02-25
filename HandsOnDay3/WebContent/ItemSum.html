@@ -9,25 +9,25 @@
 <body>
 	<table >
 		<tr>
-			<td><input type="checkbox" name="addItem" value="Item1"></td>
+			<td><input type="checkbox" name="addItem" id="addItem0" value="Item0"></td>
 			<td id="Item0"></td>
 			<td id="Price0"></td>
 		</tr>
 		
 		<tr>
-			<td><input type="checkbox" name="addItem" value="Item2"></td>
+			<td><input type="checkbox" name="addItem" id="addItem1" value="Item1"></td>
 			<td id="Item1"></td>
 			<td id="Price1"></td>
 		</tr>
 		
 		<tr>
-			<td><input type="checkbox" name="addItem" value="Item3"></td>
+			<td><input type="checkbox" name="addItem" id="addItem2" value="Item2"></td>
 			<td id="Item2"></td>
 			<td id="Price2"></td>
 		</tr>
 		
 		<tr>
-			<td><input type="checkbox" name="addItem" value="Item4"></td>
+			<td><input type="checkbox" name="addItem" id="addItem3" value="Item3"></td>
 			<td id="Item3"></td>
 			<td id="Price3"></td>
 		</tr>
@@ -46,16 +46,21 @@
 		prices.innerHTML = priceList[i].price;	
 	}
 	var total=0;
-	var boxes = document.getElementsByName("addItem");
-	for(var i=0;i<boxes.length;i++) {
-	boxes[i].addEventListener("change",function(){
-		/*if(boxes[i].checked)
-			total+=priceList[i].price;
-		else
-			total-=priceList[i].price;
-		alert(total);*/
-		//document.getElementById("total").innerHTML=total;
-	});
+	for(i=0;i<priceList.length;i++) {
+		var checkbox = document.getElementById("addItem"+i);
+		checkbox.addEventListener ("change", calculateTotal, false);
 	}
+	function calculateTotal(event) {
+	            var checkbox = event.target;
+	            var val =checkbox.value;
+	            var index = parseInt(val.slice(4,val.length));
+	            if (checkbox.checked) {
+	                total+=parseFloat(priceList[index].price);
+	            }
+	            else {
+	            	total-=parseFloat(priceList[index].price);
+	            }
+	            document.getElementById("total").innerHTML = total;
+	        }
 </script>
 </html>
