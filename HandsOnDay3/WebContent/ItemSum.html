@@ -45,7 +45,17 @@
 		names.innerHTML = priceList[i].itemName;
 		prices.innerHTML = priceList[i].price;	
 	}
-	
-	
+	var total=0;
+	var boxes = document.getElementsByName("addItem");
+	for(var i=0;i<boxes.length;i++) {
+	boxes[i].addEventListener("change",function(){
+		/*if(boxes[i].checked)
+			total+=priceList[i].price;
+		else
+			total-=priceList[i].price;
+		alert(total);*/
+		//document.getElementById("total").innerHTML=total;
+	});
+	}
 </script>
 </html>
