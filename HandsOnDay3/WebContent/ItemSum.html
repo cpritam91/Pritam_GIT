@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link href="Styles/PlaceOrderStyle.css" type = "text/css" rel = "stylesheet"/>
+<body>
+	<table >
+		<tr>
+			<td><input type="checkbox" name="addItem" value="Item1"></td>
+			<td id="Item0"></td>
+			<td id="Price0"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="checkbox" name="addItem" value="Item2"></td>
+			<td id="Item1"></td>
+			<td id="Price1"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="checkbox" name="addItem" value="Item3"></td>
+			<td id="Item2"></td>
+			<td id="Price2"></td>
+		</tr>
+		
+		<tr>
+			<td><input type="checkbox" name="addItem" value="Item4"></td>
+			<td id="Item3"></td>
+			<td id="Price3"></td>
+		</tr>
+		<tr>
+			<td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript" src="Data/ItemPrice.js"></script>
+<script type="text/javascript">
+	for(var i = 0; i <priceList.length;i++) {
+		var names=document.getElementById("Item"+i);
+		var prices=document.getElementById("Price"+i);
+		names.innerHTML = priceList[i].itemName;
+		prices.innerHTML = priceList[i].price;	
+	}
+	
+	
+</script>
+</html>

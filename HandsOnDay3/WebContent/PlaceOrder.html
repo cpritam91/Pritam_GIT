@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Place Orders</title>
+<link href="Styles/PlaceOrderStyle.css" type = "text/css" rel = "stylesheet"/>
+</head>
+<body>
+<header>
+	<h1>Place Order</h1>
+	<form action="" method="post" id="myForm">
+		<table>
+			<tr>
+				<td>Customer Name</td>
+				<td colspan = "3"><input type="text" id="name" name="customerName" size="30"></td>
+			</tr>
+			
+			<tr>
+				<td>Location</td>
+				<td colspan="3">
+					<select name="location">
+						<option selected="selected">Gurgaon</option>
+						<option>New Delhi</option>
+						<option>Noida</option>
+						<option>Kolkata</option>
+						<option>Bangalore</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Payment Mode</td>
+				<td><input type="radio" name="payment" value="Netbanking" required="required"> Net Banking</td>
+  				<td><input type="radio" name="payment" value="Visa"> VISA</td>
+  				<td><input type="radio" name="payment" value="MasterCard"> MasterCard</td>
+			</tr>
+			
+			<tr>
+				<td>Choose Offers</td>
+				<td><input type="checkbox" name="offer" value="Points"> Points</td>
+  				<td><input type="checkbox" name="offer" value="MovieTickets"> Movie Tickets</td>
+  				<td><input type="checkbox" name="offer" value="JabongCoupons"> Jabong Coupons</td>
+			</tr>
+			
+			<tr>
+				<td><input type="reset" value="Reset"></td>
+				<td colspan="3"><input type="button" id="sub" value="Submit"></td>
+			</tr>
+		</table>
+	</form>
+</header>
+</body>
+<script type="text/javascript" src="Scripts/PlaceOrderScript.js"></script>
+</html>
