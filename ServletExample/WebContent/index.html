@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My First Example</title>
+<link href="css/Styles.css" type = "text/css" rel = "stylesheet"/>
+</head>
+<body>
+<header>
+	<div id="hdLeft">
+		<img alt="Logo" src="Images/myPic.jpg">
+	</div>
+	<div id="hdRight">
+		<h1>My Facebook Profile</h1>
+	</div>
+</header>
+<nav>
+	<ul>
+		<li><a href="Home.html"><span style = "padding-left : 5px">Home</span></a></li>
+		<li><a href="Book.html"><span style = "padding-left : 5px">Book</span></a></li>
+		<li><a href="Order.html"><span style = "padding-left : 5px">Order</span></a></li>
+		<li><a href="Review.html"><span style = "padding-left : 5px">Review</span></a></li>
+		<li><a href="Contact.html"><span style = "padding-left : 5px">Contact</span></a></li>
+	</ul>
+</nav>
+<section>
+	<form action="greet">
+		<table>
+			<tr>
+				<td><label>Username</label></td>
+				<td><input id="uname" type = "text" name = "userName" placeholder="UserName" required="required" size="20"></td>
+			</tr>
+			<tr>
+				<td><label>Password</label></td>
+				<td><input id="pass" type = "password" name = "passWord" placeholder="Password" required="required" size="20"></td>
+			</tr>
+			<tr>
+				<td><label>Phone Number</label></td>
+				<td><input type = "tel" name = "phone" placeholder="999-999-9999" pattern="\d{3}-\d{3}-\d{4}" size="20"></td>
+			</tr>
+			<tr>
+				<td><label>Email Id</label></td>
+				<td><input type = "email" name = "email" placeholder="abc@xyz.com" required="required" multiple="multiple" size="20"></td>
+			</tr>
+			<tr>
+				<td><label>Role</label></td>
+				<td><select name="role">
+				<option selected="selected">Administrator</option>
+				<option>Chef</option>
+				<option>Waiter</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"> <input type="submit" value="Login"/></td>
+			</tr>
+		</table>
+	</form>
+</section>
+
+<script type="text/javascript">
+
+	var element= document.getElementById("uname");
+	element.addEventListener("copy", function(event) {
+		event.preventDefault();// This will prevent the copying from taking place. Without this line the copy will be done but alert 
+		//would be shown. 
+		alert("Copy Not Allowed");
+	});
+	element.addEventListener("paste", function(event) { //Event need not be passed as it is an implicit object and JS is loosely typed
+		event.preventDefault();
+		alert("Paste Not Allowed");
+	});
+	
+	document.addEventListener("contextmenu", function(event) {
+		event.preventDefault();
+		alert("Right Click Not Allowed");		
+	});
+	
+</script>
+
+</body>
