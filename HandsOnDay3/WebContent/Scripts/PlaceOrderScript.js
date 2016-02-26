@@ -6,9 +6,10 @@ var submit = document.getElementById("sub");
 submit.addEventListener("click",function() {
 	var name = document.getElementById("name");
 	newName = prompt("Is your name entered correctly?",name.value);
-	if(newName != null)
+	if(newName != null) {
 		name.value = newName;
-	confirmAllInfo();
+		confirmAllInfo();
+	}
 });
 
 function arrToString(arr) {
