@@ -1,7 +1,6 @@
 package com.training.utils;
 
 import java.sql.*;
-import java.util.Properties;
 
 public class SQLConnection {
 
