@@ -1,7 +1,7 @@
 package com.training.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class SearchServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BookManager mgr = new BookManager();
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		
 		response.setContentType("text/html");
 		Long bookId = Long.parseLong(request.getParameter("search"));

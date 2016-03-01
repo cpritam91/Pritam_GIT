@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Total Bill</title>
+</head>
+
+<link href="Styles/PlaceOrderStyle.css" type = "text/css" rel = "stylesheet"/>
+<body>
+	<table id="table1">
+		
+		<tr>
+			<td>Total</td>
+			<td colspan="2" id="total"></td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript" src="Data/ItemPrice.json"></script>
+<script type="text/javascript" src = "jslibs/jquery-1.12.1.js"></script>
+<script>
+var table = document.getElementById("table1");
+for(var i = 0; i <priceList.length;i++) {
+	
+	var row= table.insertRow(i);
+	
+	var cell1 = row.insertCell(0);
+	var element1 = document.createElement("input");
+    element1.type = "checkbox";
+    element1.name="addItem";
+    element1.id="addItem"+i;
+    element1.value="Item"+i;
+    cell1.appendChild(element1);
+	
+    var cell2 = row.insertCell(1);
+    cell2.id="Item"+i;
+    cell2.innerHTML=priceList[i].itemName;
+    
+    
+    var cell3 = row.insertCell(2);
+    cell3.id="Price"+i;
+    cell3.innerHTML=priceList[i].price;
+}
+var total=0;
+$(document).ready(function(){
+	for(var i =0;i<priceList.length;i++) {
+    	$('#addItem'+i).bind('change',function(event){
+    		if (!$(this).is(':checked'))
+    			total+ = parseFloat(priceList[i].price);
+    		else
+    			total- = parseFloat(priceList[i].price);
+    		$('#total').html(total);
+    	});
+	}
+    });
+</script>
+</html>
