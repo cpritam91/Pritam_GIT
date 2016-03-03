@@ -1,7 +1,6 @@
 package com.training.tags;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
@@ -22,6 +21,7 @@ public class ForEachTag extends TagSupport {
 		this.attrName = attrName;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public int doStartTag() throws JspException {
 		

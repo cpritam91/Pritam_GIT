@@ -5,14 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Using Java Bean</title>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 </head>
 <body>
 <jsp:useBean id="custBean" class="com.training.beans.Customer" scope="session"/>
 <jsp:setProperty property="*" name="custBean"/>
 Dear : <jsp:getProperty property="customerName" name="custBean"/> Thank You for registering.
 
-<%
-
-%>
+Invoking Bean Method <c:out value="${custBean.getInfo()}"/>
 </body>
 </html>

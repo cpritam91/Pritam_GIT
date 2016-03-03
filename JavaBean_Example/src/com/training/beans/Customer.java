@@ -62,5 +62,8 @@ public class Customer implements Serializable {
 				+ ", handPhone=" + handPhone + "]";
 	}
 	
+	public String getInfo() {
+		return "Message from Bean";
+	}
 	
 }
