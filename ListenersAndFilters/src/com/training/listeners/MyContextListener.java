@@ -18,13 +18,13 @@ public class MyContextListener implements ServletContextListener,ServletContextA
 
     public void contextInitialized(ServletContextEvent event)  { 
          
-    	System.out.println("Context - Initialized ===== ");
+    	System.out.println("===== Context - Initialized ===== ");
     	String url = event.getServletContext().getInitParameter("url");
     	String className = event.getServletContext().getInitParameter("className");
     	String userName = event.getServletContext().getInitParameter("userName");
     	String passWord = event.getServletContext().getInitParameter("passWord");
     	
-    	SQLConnection obj=new SQLConnection(url,className,userName,passWord);
+    	SQLConnection obj = new SQLConnection(url, className, userName, passWord);
     	
     	Connection con = obj.getOracleConnection();
     	   

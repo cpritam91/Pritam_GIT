@@ -13,7 +13,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Integer empId, String role, String userName, String passWord, String labCode) {
+	public User(Integer empId, String userName, String role, String passWord, String labCode) {
 		super();
 		this.role = role;
 		this.labCode = labCode;

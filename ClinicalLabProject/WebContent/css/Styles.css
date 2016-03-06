@@ -2,3 +2,46 @@
 h1 {
 	text-align: center;
 }
+table,td,tr{
+	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid;
+	border-collapse: collapse; 
+	border-color: red;
+}
+#flag {
+	float: right;padding-bottom: 10px;
+}
+#labName {
+	height:80px;
+	width: 100%;
+	background-color: orange;
+	font-size: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+nav {
+	font-size: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	height : 40px;
+	width: 100%;
+	background-color: green; 
+}
+li {
+	display: inline;
+	border : 2px solid orange;
+	border-radius : 20px 5px 20px 5px;
+	background-color: yellow;
+}
+#footer{
+	height:80px;
+	width: 100%;
+	background-color: orange;
+	font-size: 20px;
+	padding-top: 15px;
+	padding-bottom: 8px;
+	text-align: center;
+}
