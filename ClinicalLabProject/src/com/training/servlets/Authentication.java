@@ -3,6 +3,7 @@ package com.training.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,12 +42,13 @@ public class Authentication extends HttpServlet {
 		
 		String labCode = request.getParameter("labCode");
 		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("PatientDetails.jsp");
 		UserDAO udao = new UserDAO();
 		boolean flag = false;
 		User u1 = udao.find(user);
 		if(u1 != null) {
 			if(pword.equals(u1.getPassWord()) && role.equals(u1.getRole()) && labCode.equals(u1.getLabCode())) {
-				out.println("Valid User");
+				dispatcher.forward(request, response);
 				flag=true;
 			}
 		}

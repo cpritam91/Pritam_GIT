@@ -32,5 +32,9 @@ public class Test {
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
+	@Override
+	public String toString() {
+		return "Test [code=" + code + ", testName=" + testName + ", amount=" + amount + "]";
+	}
 	
 }

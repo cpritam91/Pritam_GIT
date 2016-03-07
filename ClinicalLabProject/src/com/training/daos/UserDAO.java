@@ -140,5 +140,12 @@ public class UserDAO implements DAO<User> {
 		}
 		return rowDeleted;
 	}
-
+	public void closeConn() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

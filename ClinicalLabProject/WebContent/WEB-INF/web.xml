@@ -19,4 +19,24 @@
     <servlet-name>Authentication</servlet-name>
     <url-pattern>/Authentication</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetPatientDetails</display-name>
+    <servlet-name>GetPatientDetails</servlet-name>
+    <servlet-class>com.training.servlets.GetPatientDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPatientDetails</servlet-name>
+    <url-pattern>/GetPatientDetails</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetTestDetails</display-name>
+    <servlet-name>GetTestDetails</servlet-name>
+    <servlet-class>com.training.servlets.GetTestDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetTestDetails</servlet-name>
+    <url-pattern>/GetTestDetails</url-pattern>
+  </servlet-mapping>
 </web-app>

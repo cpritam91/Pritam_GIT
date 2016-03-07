@@ -8,7 +8,7 @@
 
 $(function(){ //Ready Handler
 	
-	$("#usrid").on('blur',function(){
+	$("#usrid").on('keyup',function(){
 		var usrId = $(this).val();
 		console.log(usrId);
 		var url = "http://jsonplaceholder.typicode.com/users/" + usrId;

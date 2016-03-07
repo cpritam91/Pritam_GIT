@@ -2,7 +2,7 @@
 h1 {
 	text-align: center;
 }
-table,td,tr{
+table,td,tr,th{
 	font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align: center;
 	margin-left: auto;
@@ -10,6 +10,10 @@ table,td,tr{
 	border: solid;
 	border-collapse: collapse; 
 	border-color: red;
+}
+
+th{
+	width: 40mm;
 }
 #flag {
 	float: right;padding-bottom: 10px;
@@ -44,4 +48,12 @@ li {
 	padding-top: 15px;
 	padding-bottom: 8px;
 	text-align: center;
+}
+
+#codeAttribute {
+	color: blue;
+}
+
+#buttonSet {
+	text-align:center;
 }
