@@ -59,6 +59,23 @@ $(function() {
             counter + '"/></td id="testName'+counter+'"><td></td><td id="testAmt'+counter+'"></td></tr>');
         $('#TestList tr:last').before(newRow);
     });
+    //-------------------------------------------- DEBUG
+    $("#testCode"+counter).on('keyup',function(){
+    	var testId = $(this).val();
+		var datastream = "testCode="+testId;
+		$.ajax({
+			type: 'GET', 
+            url: "GetTestDetails",
+            dataType: "text",
+            data: datastream,
+            success: function(data) {
+                var test = $.parseJSON(data);
+                $("#testName"+counter).val(test.testName);
+                $("#testAmt"+counter).val(test.amount);
+            }
+		});
+    });
+    //---------------------------------------------
 });
 function fetchData(event) {
     var textbox = event.target;
