@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "custBean" class="com.training.domains.Customer" lazy-init="true" scope="prototype" autowire="byName">
+	<!-- Customer will look for Address Bean using the name property since it has same name as the bean name -->
+	<property name="customerId" value="1010"/>
+	<property name="customerName" value="Pritam"/>
+	<property name="phoneNumber" value="7800484041"/>
+</bean>
+
+<bean id="address" class="com.training.domains.Address">
+	<constructor-arg name="addrLine1" value="Gandhi Street"/>
+	<constructor-arg name="addrLine2" value="Nehru Nagar"/>
+	<constructor-arg name="city" value="New Delhi"/>
+	<constructor-arg name="pinCode" value="110012"/>
+</bean>
+
+<bean id="invBean" class="com.training.domains.Invoice" autowire="byType"> <!-- Invoice will look for customer bean by its type
+	because the name of the bean is different. -->
+	<property name="invoiceId" value="522"/>
+	<property name="price" value="500.00"/>
+	<property name="products">
+		<list>
+			<ref bean="item1"/>
+			<ref bean="item2"/>
+		</list>
+	</property>
+	<property name="tax">
+		<map>
+			<entry key="IT" value="10.0"/>
+			<entry key="Cess" value="5.0"/>
+			<entry key="Service Tax" value="12.5"/>
+		</map>
+	</property>
+</bean>
+
+<bean id = "item1" class="com.training.domains.Item">
+	<constructor-arg index="0" value="101"/>
+	<constructor-arg index="1" value="Sugar"/>
+	<constructor-arg index="2" value="60"/>
+</bean>
+<bean id = "item2" class="com.training.domains.Item">
+	<constructor-arg type="int" value="102"/>
+	<constructor-arg type="java.lang.String" value="Rice"/>
+	<constructor-arg type="double" value="60"/>
+</bean>
+</beans>
