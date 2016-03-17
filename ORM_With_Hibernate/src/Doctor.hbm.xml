@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 17, 2016 10:04:38 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.training.entity.Doctor" table="DOCTOR">
+        <id name="doctorCode" type="int">
+            <column name="DOCTORCODE" />
+            <generator class="assigned" />
+        </id>
+        <property name="doctorName" type="java.lang.String">
+            <column name="DOCTORNAME" />
+        </property>
+        <property name="handPhone" type="long">
+            <column name="HANDPHONE" />
+        </property>
+        
+        <component name="residence" class="com.training.entity.Address">
+        	<property name="plotNo" column="RES_PLOTNO"/>
+        	<property name="street" column="RES_STREET"/>
+        	<property name="city" column="RES_CITY"/>
+        </component>
+        
+        <component name="clinic" class="com.training.entity.Address">
+        	<property name="plotNo" column="CLI_PLOTNO"/>
+        	<property name="street" column="CLI_STREET"/>
+        	<property name="city" column="CLI_CITY"/>
+        </component>
+        
+    </class>
+</hibernate-mapping>
