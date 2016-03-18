@@ -13,6 +13,7 @@ public class HiberUtils {
 		try {
 			factory = new Configuration().configure().buildSessionFactory();
 		} catch (Throwable e) {
+			e.printStackTrace();
 			throw new ExceptionInInitializerError();
 		}
 	}

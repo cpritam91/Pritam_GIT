@@ -1,6 +1,7 @@
 package com.training.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class Doctor implements Serializable {
 
@@ -9,66 +10,37 @@ public class Doctor implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((clinic == null) ? 0 : clinic.hashCode());
-		result = prime * result + doctorCode;
-		result = prime * result + ((doctorName == null) ? 0 : doctorName.hashCode());
-		result = prime * result + (int) (handPhone ^ (handPhone >>> 32));
-		result = prime * result + ((residence == null) ? 0 : residence.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Doctor other = (Doctor) obj;
-		if (clinic == null) {
-			if (other.clinic != null)
-				return false;
-		} else if (!clinic.equals(other.clinic))
-			return false;
-		if (doctorCode != other.doctorCode)
-			return false;
-		if (doctorName == null) {
-			if (other.doctorName != null)
-				return false;
-		} else if (!doctorName.equals(other.doctorName))
-			return false;
-		if (handPhone != other.handPhone)
-			return false;
-		if (residence == null) {
-			if (other.residence != null)
-				return false;
-		} else if (!residence.equals(other.residence))
-			return false;
-		return true;
-	}
-
+	
 	private int doctorCode; // Identifier Property
 	private String doctorName;
 	private long handPhone;
 	private Address residence;
 	private Address clinic;
+	private ClinicalAssistant assistant;
+	private Set<Patient> patientSet;
 	
 	public Doctor() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Doctor(int doctorCode, String doctorName, long handPhone, Address residence, Address clinic) {
+	public Doctor(int doctorCode, String doctorName, long handPhone, Address residence, Address clinic,ClinicalAssistant assistant) {
 		super();
 		this.doctorCode = doctorCode;
 		this.doctorName = doctorName;
 		this.handPhone = handPhone;
 		this.residence = residence;
 		this.clinic = clinic;
+		this.assistant = assistant;
+	}
+	
+	
+
+	public ClinicalAssistant getAssistant() {
+		return assistant;
+	}
+
+	public void setAssistant(ClinicalAssistant assistant) {
+		this.assistant = assistant;
 	}
 
 	public int getDoctorCode() {
@@ -111,10 +83,21 @@ public class Doctor implements Serializable {
 	public void setClinic(Address clinic) {
 		this.clinic = clinic;
 	}
+	
+	
+
+	public Set<Patient> getPatientSet() {
+		return patientSet;
+	}
+
+	public void setPatientSet(Set<Patient> patientSet) {
+		this.patientSet = patientSet;
+	}
 
 	@Override
 	public String toString() {
 		return "Doctor [doctorCode=" + doctorCode + ", doctorName=" + doctorName + ", handPhone=" + handPhone
-				+ ", residence=" + residence + ", clinic=" + clinic + "]";
+				+ ", residence=" + residence + ", clinic=" + clinic + ", assistant=" + assistant + ", patientSet="
+				+ patientSet + "]";
 	}
 }

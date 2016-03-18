@@ -20,6 +20,10 @@
         
         <!--  Mandatory mapping document -->
         <mapping resource = "Doctor.hbm.xml"/>
+        <mapping resource = "Patient.hbm.xml"/>
+        <mapping resource = "InPatient.hbm.xml"/>
+        <mapping resource = "ClinicalAssistant.hbm.xml"/>
+        
         
     </session-factory>
 </hibernate-configuration>

@@ -3,7 +3,7 @@ package com.training.ifaces;
 import java.io.Serializable;
 import java.util.List;
 
-public interface MyDAO<T> {
+public interface DAO<T> {
 	
 	public Serializable add(T t);
 	public T find(Serializable obj);

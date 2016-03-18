@@ -1,5 +1,6 @@
 package com.training.daos;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -22,7 +23,7 @@ public class DoctorDAO implements MyDAO<Doctor> {
 	}
 
 	@Override
-	public Object add(Doctor t) {
+	public Serializable add(Doctor t) {
 		session = factory.openSession();
 		Transaction tx = session.beginTransaction();
 		int key = (Integer)session.save(t);
@@ -32,9 +33,10 @@ public class DoctorDAO implements MyDAO<Doctor> {
 	}
 
 	@Override
-	public Doctor find(Object key) {
+	public Doctor find(Serializable key) {
 		session = factory.openSession();
 		Doctor doc = (Doctor)session.get(Doctor.class, (Integer)key);
+		System.out.println("\n\n"+doc+"\n\n");
 		session.close();
 		return doc;
 		
@@ -50,7 +52,7 @@ public class DoctorDAO implements MyDAO<Doctor> {
 	}
 
 	@Override
-	public Object update(Doctor t) {
+	public Serializable update(Doctor t) {
 		session = factory.openSession();
 		
 		try {
@@ -75,11 +77,11 @@ public class DoctorDAO implements MyDAO<Doctor> {
 	}
 
 	@Override
-	public boolean delete(Object obj) {
+	public boolean delete(Serializable obj) {
 		session = factory.openSession();
 		try {
 			Transaction tx = session.beginTransaction();
-			Doctor doc =(Doctor)session.load(Doctor.class, (Integer)obj);
+			Doctor doc =(Doctor)session.load(Doctor.class, obj);
 			session.delete(doc);
 			tx.commit();
 			return true;
