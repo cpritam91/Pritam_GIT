@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 21, 2016 2:30:20 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Mar 21, 2016 5:34:03 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.training.domains.Department" table="DEPARTMENT">
         <id name="deptId" type="int">
             <column name="DEPTID" />
             <generator class="assigned" />
         </id>
-        <set name="students" table="STUDENT" inverse="false" lazy="true">
+        <property name="deptName" type="java.lang.String">
+            <column name="DEPTNAME" />
+        </property>
+        <set name="students" table="STUDENT" inverse="false" lazy="false">
             <key>
                 <column name="DEPTID" />
             </key>

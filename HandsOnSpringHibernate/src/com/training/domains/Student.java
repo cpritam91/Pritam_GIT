@@ -11,13 +11,14 @@ public class Student {
 	private double marks_Event;
 	private double marks_Sport;
 	private double marks_Cultural;
+	private int deptId;
 	
 	public Student() {
 		super();
 	}
 
 	public Student(int rollNo, String name, double marks_Academic, double marks_Event, double marks_Sport,
-			double marks_Cultural) {
+			double marks_Cultural,int deptId) {
 		super();
 		this.rollNo = rollNo;
 		this.name = name;
@@ -25,6 +26,7 @@ public class Student {
 		this.marks_Event = marks_Event;
 		this.marks_Sport = marks_Sport;
 		this.marks_Cultural = marks_Cultural;
+		this.deptId = deptId;
 	}
 
 	public int getRollNo() {
@@ -74,10 +76,19 @@ public class Student {
 	public void setMarks_Cultural(double marks_Cultural) {
 		this.marks_Cultural = marks_Cultural;
 	}
+	
+	public int getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
 
 	@Override
 	public String toString() {
 		return "Student [rollNo=" + rollNo + ", name=" + name + ", marks_Academic=" + marks_Academic + ", marks_Event="
-				+ marks_Event + ", marks_Sport=" + marks_Sport + ", marks_Cultural=" + marks_Cultural + "]";
+				+ marks_Event + ", marks_Sport=" + marks_Sport + ", marks_Cultural=" + marks_Cultural + ", dept_id="
+				+ deptId + "]";
 	}
 }

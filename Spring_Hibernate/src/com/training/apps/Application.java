@@ -15,10 +15,11 @@ public class Application {
 		
 		HiberSpringExample dao = ctx.getBean(HiberSpringExample.class);
 		
-		Doctor doc = new Doctor(655,"Pritam",9878787644L);
+		Doctor doc = new Doctor(652,"Sumit",9545487644L);
+
+		//Integer key = (Integer)dao.add(doc);
 		
 		System.out.println(dao.findAll());
-		//Integer key = (Integer)dao.add(doc);
 		
 		//System.out.println("One Doctor with key "+key+" added.");
 

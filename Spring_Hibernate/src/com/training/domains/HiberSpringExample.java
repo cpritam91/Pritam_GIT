@@ -26,7 +26,7 @@ public class HiberSpringExample extends HibernateDaoSupport implements DAO<Docto
 	@Override
 	public List findAll() {
 		List<Doctor> docList = (List<Doctor>)getHibernateTemplate().find("from Doctor");
-		return null;
+		return docList;
 	}
 
 	@Override

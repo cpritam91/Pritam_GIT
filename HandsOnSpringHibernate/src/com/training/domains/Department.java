@@ -8,15 +8,17 @@ import org.springframework.stereotype.Component;
 public class Department {
 
 	private int deptId;
+	private String deptName;
 	private Set<Student> students;
 	
 	public Department() {
 		super();
 	}
 
-	public Department(int deptId, Set<Student> students) {
+	public Department(int deptId, String deptName, Set<Student> students) {
 		super();
 		this.deptId = deptId;
+		this.deptName = deptName;
 		this.students = students;
 	}
 
@@ -26,6 +28,15 @@ public class Department {
 
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
+	}
+
+	
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 
 	public Set<Student> getStudents() {
@@ -41,6 +52,6 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return "Department [deptId=" + deptId + ", students=" + students + "]";
+		return "Department [deptId=" + deptId + ", deptName=" + deptName + ", students=" + students + "]";
 	}
 }

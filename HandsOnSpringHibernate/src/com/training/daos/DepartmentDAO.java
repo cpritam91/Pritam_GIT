@@ -12,20 +12,21 @@ public class DepartmentDAO extends HibernateDaoSupport implements DAO<Department
 
 	@Override
 	public Serializable add(Department t) {
-		// TODO Auto-generated method stub
-		return null;
+		Serializable key = getHibernateTemplate().save(t);
+		return key;
 	}
 
 	@Override
 	public Department find(Serializable obj) {
-		// TODO Auto-generated method stub
-		return null;
+		Department dept = getHibernateTemplate().get(Department.class, obj);
+		return dept;
 	}
 
 	@Override
 	public List<Department> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		List<Department> deptList = (List<Department>)getHibernateTemplate().find("from Department");
+		return deptList;
 	}
 
 	@Override

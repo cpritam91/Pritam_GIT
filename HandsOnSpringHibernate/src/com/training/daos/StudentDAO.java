@@ -10,9 +10,6 @@ import com.training.ifaces.DAO;
 
 public class StudentDAO extends HibernateDaoSupport implements DAO<Student> {
 
-	public StudentDAO() {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public Serializable add(Student t) {
@@ -22,14 +19,15 @@ public class StudentDAO extends HibernateDaoSupport implements DAO<Student> {
 
 	@Override
 	public Student find(Serializable obj) {
-		// TODO Auto-generated method stub
-		return null;
+		Student stu = getHibernateTemplate().get(Student.class, obj);
+		return stu;
 	}
 
 	@Override
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		List<Student> stuList = (List<Student>)getHibernateTemplate().find("from Student");
+		return stuList;
 	}
 
 	@Override

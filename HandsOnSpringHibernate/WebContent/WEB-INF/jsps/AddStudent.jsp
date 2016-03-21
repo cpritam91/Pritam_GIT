@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form:form method="POST" action="addStudent.htm">
+	<form:form method="POST" action="AddStudent.htm">
 		<label>Roll Number</label>
 		<form:input path="rollNo"/><br>
 		<label>Student Name</label>
@@ -22,6 +22,7 @@
 		<form:input path="marks_Sport"/><br>
 		<label>Cultural Marks</label>
 		<form:input path="marks_Cultural"/><br>
+		<form:select path="deptId" items="${deptList}"></form:select>
 		<input type ="submit" value="OK">
 	</form:form>
 

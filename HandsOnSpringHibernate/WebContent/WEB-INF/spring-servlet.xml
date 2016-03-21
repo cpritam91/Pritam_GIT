@@ -51,9 +51,7 @@
 
 
 
-<bean class="com.training.daos.StudentDAO"  
-	p:hibernateTemplate-ref="template"></bean>
-<bean class="com.training.daos.DepartmentDAO"  
-	p:hibernateTemplate-ref="template"></bean>
+<bean class="com.training.daos.StudentDAO" p:hibernateTemplate-ref="template"></bean>
+<bean class="com.training.daos.DepartmentDAO" p:hibernateTemplate-ref="template"></bean>
 
 </beans>
