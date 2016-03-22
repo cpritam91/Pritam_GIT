@@ -22,6 +22,8 @@
 		<form:input path="marks_Sport"/><br>
 		<label>Cultural Marks</label>
 		<form:input path="marks_Cultural"/><br>
+		<label>Photo_Path</label>
+		<form:input  path="photopath"/><br>
 		<form:select path="deptId" items="${deptList}"></form:select>
 		<input type ="submit" value="OK">
 	</form:form>

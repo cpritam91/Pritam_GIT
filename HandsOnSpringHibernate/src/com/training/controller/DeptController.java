@@ -17,7 +17,7 @@ import com.training.domains.Department;
 import com.training.domains.Student;
 
 @Controller
-@RequestMapping("/dept")
+@RequestMapping("/")
 public class DeptController {
 
 	@Autowired
@@ -33,6 +33,11 @@ public class DeptController {
 	
 	@Autowired
 	private ModelAndView mdl;
+	
+	@RequestMapping("/")
+	public String initForm0() {
+		return "index";
+	}
 	
 	@RequestMapping(value="/AddStudent.htm", method = RequestMethod.GET)
 	public ModelAndView initForm() {
@@ -78,21 +83,21 @@ public class DeptController {
 		Double overallMarks;
 		Department dept = ddao.find(deptId);
 		Set<Student> stuList = dept.getStudents();
-		TreeMap<Double, String> top3 = new TreeMap<Double, String>();
+		TreeMap<Double, Student> top3 = new TreeMap<Double, Student>();
 		for(Student stu : stuList)
 		{
 			overallMarks = stu.getMarks_Academic()*0.5 + stu.getMarks_Event()*0.1 
 					+ stu.getMarks_Sport()*0.2 + stu.getMarks_Cultural()*0.2;
 			System.out.println("--"+stu.getName()+"--"+overallMarks+"--");
-			top3.put(overallMarks, stu.getName());
+			top3.put(overallMarks, stu);
 		}
-		List<String> finalList = new ArrayList<String>();
+		List<Student> finalList = new ArrayList<Student>();
 		SortedSet<Double> keys = new TreeSet<Double>(top3.descendingKeySet());
 		int count = 3;
 		for (Double key : keys) { 
 		   if(count-- == 0)
 			   break;
-		   String name = top3.get(key);
+		   Student name = top3.get(key);
 		   finalList.add(name);
 		}
 		model.addAttribute("finalList",finalList);

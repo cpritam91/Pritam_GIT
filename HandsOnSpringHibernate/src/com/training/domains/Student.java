@@ -12,7 +12,16 @@ public class Student {
 	private double marks_Sport;
 	private double marks_Cultural;
 	private int deptId;
+	private String photopath;
 	
+	public String getPhotopath() {
+		return photopath;
+	}
+
+	public void setPhotopath(String photopath) {
+		this.photopath = photopath;
+	}
+
 	public Student() {
 		super();
 	}
@@ -88,7 +97,7 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [rollNo=" + rollNo + ", name=" + name + ", marks_Academic=" + marks_Academic + ", marks_Event="
-				+ marks_Event + ", marks_Sport=" + marks_Sport + ", marks_Cultural=" + marks_Cultural + ", dept_id="
-				+ deptId + "]";
+				+ marks_Event + ", marks_Sport=" + marks_Sport + ", marks_Cultural=" + marks_Cultural + ", deptId="
+				+ deptId + ", photopath=" + photopath + "]";
 	}
 }

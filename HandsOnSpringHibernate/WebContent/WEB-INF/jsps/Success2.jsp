@@ -10,7 +10,8 @@
 <body>
 	Best 3 students <br>
 	<c:forEach var="stuName" items="${finalList}">
-		<label>${stuName}</label>
+		<label>${stuName.name}</label>
+		<label> <img src="${stuName.photopath}" height="200px" width="140px"/></label><br>
 	</c:forEach>
 </body>
 </html>

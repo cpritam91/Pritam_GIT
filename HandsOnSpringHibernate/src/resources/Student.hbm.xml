@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 21, 2016 5:32:14 PM by Hibernate Tools 3.5.0.Final -->
+<!-- Generated Mar 22, 2016 11:42:53 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="com.training.domains.Student" table="STUDENT">
-        
-        <id name="rollNo" type="int">
+         <id name="rollNo" type="int">
             <column name="ROLLNO" />
             <generator class="assigned" />
         </id>
@@ -26,6 +25,9 @@
         </property>
         <property name="marks_Cultural" type="double">
             <column name="MARKS_CULTURAL" />
+        </property>
+        <property name="photopath" type="java.lang.String">
+            <column name="PHOTOPATH" />
         </property>
     </class>
 </hibernate-mapping>
