@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ConverterService
+Bundle-SymbolicName: ConverterService
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: converterservice.Activator
+Bundle-Vendor: Pritam
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.osgi.framework;version="1.3.0"
+Export-Package: converterservice.service,
+ converterservice.utils

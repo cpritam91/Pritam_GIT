@@ -1,0 +1,18 @@
+----------------------------------------------------------------
+2016-03-23 07:11:55.605 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0153-a250-c485-000005eab7b0
+on database directory D:\JavaWorkspace1\JCRExample\repository\version\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-03-23 07:11:56.006 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0153-a250-c485-000005eab7b0
+on database directory D:\JavaWorkspace1\JCRExample\repository\workspaces\default\db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2016-03-23 07:11:56.595 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance e1734037-0153-a250-c485-000005eab7b0
+on database directory D:\JavaWorkspace1\JCRExample\repository\workspaces\security\db  
+
+Database Class Loader started - derby.database.classpath=''

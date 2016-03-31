@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>See Movie Lists</title>
+<script type="text/javascript" src = "jquery"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+$(document).ready(function(){
+	$("#movieList").click(function(event){
+		event.preventDefault();
+		$.getJSON("movies",function(data){
+			$("div").empty();
+			$.each(data, function(i, field){
+                $("div").append("<a id='"+field.name+"' href='findSongs/"+field.name+"'>"+field.name + "<a><br>");
+            
+                $("#"+field.name).click(function(event){
+            		event.preventDefault();
+            		$.getJSON("findSongs/"+field.name,function(data){
+            			$("#songsList").empty();
+            			$.each(data.roles, function(i, field){
+            				$("#songsList").css("border", "solid");
+                            $("#songsList").append("<tr><td>"+data.roles[i]+"</td></tr>");
+                        });
+            		});
+            	});
+                
+			});
+		});
+	});	
+});
+
+</script>
+
+	<h1>HOME PAGE</h1> 
+	<a href="movies" id="movieList">Movies</a><br><br>
+	<div></div> <br>
+	<table id="songsList">
+	</table>
+</body>
+
+</html>
